@@ -1,6 +1,8 @@
 {
   "targets": [
-    "wechat-miniprogram"
+    "miniapp"
   ],
-  "plugins": []
+  "plugins": [
+    "./build.plugin.js"
+  ]
 }
