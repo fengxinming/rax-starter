@@ -6,6 +6,7 @@
     }
   ],
   "window": {
-    "title": "Rax小程序Demo"
+    "title": "Rax小程序Demo",
+    "backgroundColor": "#F7F7F7"
   }
 }
