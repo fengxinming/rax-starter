@@ -1,0 +1,26 @@
+page {
+  box-shadow: 0 rpx375(1px) rpx375(14px) 0 rgba(0,0,0,0.17);
+  &, & * {
+    box-sizing: border-box;
+  }
+
+  --button-primary-solid-background-color: #{$primary-color};
+  --button-primary-solid-border-color: var(--button-primary-solid-background-color);
+  
+  --button-normal-solid-border-color: rgba(126,134,142,0.24);
+  --button-normal-solid-font-color: #171A1D;
+}
+
+.ic-page {
+  background-color: #F7F7F7;
+  min-height: 100%;
+  padding: rpx375(16px) !important;
+}
+
+.ic-panel-layout {
+  .ic-panel {
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+}
