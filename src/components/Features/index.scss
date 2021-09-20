@@ -1,0 +1,24 @@
+.ic-features {
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &-item {
+    width: 25%;
+    display: inline-block;
+    text-align: center;
+    padding: 0 0 24px 0;
+  
+    &-icon {
+      width: rpx375(40px);
+      height: rpx375(40px);
+    }
+  
+    &-label {
+      font-size: rpx375(12px);
+      color: #595959;
+      height: rpx375(17px);
+      line-height: rpx375(17px);
+      margin: 4px 0 2px 0;
+    }
+  }
+}
