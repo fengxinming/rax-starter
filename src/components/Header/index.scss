@@ -1,0 +1,41 @@
+.ic-header {
+  box-sizing: content-box;
+  height: rpx375(24px);
+  line-height: rpx375(24px);
+  padding: rpx375(16px);
+  justify-content: space-between;
+  flex-direction: row;
+
+  &-title {
+    color: #333333;
+    font-size: rpx375(16px);
+    font-weight: 500;
+  }
+
+  &-link {
+    flex-direction: row;
+    color: rgba(23,26,29,0.4);
+
+    &-text {
+      font-size: rpx375(12px);
+    }
+
+    &-arrow {
+      width: rpx375(14px);
+      line-height: inherit;
+    }
+  }
+
+  &--sub {
+    height: rpx375(24px);
+    line-height: rpx375(24px);
+    padding: rpx375(8px) 0;
+
+    .ic-header-title {
+      font-size: 13px;
+      color: rgba(0,0,0,0.65);
+      font-weight: 400;
+    }
+  }
+}
+
