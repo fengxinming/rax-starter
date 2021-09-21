@@ -1,37 +1,29 @@
 import { createElement } from 'rax';
 import View from 'rax-view';
-import ICHeader from '../Header';
+import CHeader from '../Header';
 import './index.scss';
 
-function ICPanel({
+function CPanel({
   title,
   text,
   link,
-  insideTitle,
   className,
   children,
   ...rest
 }) {
   return (
-    <View x-class={['ic-panel', className]} {...rest}>
-      <ICHeader
-        x-if={title && !insideTitle}
+    <View x-class={['c-panel', className]} {...rest}>
+      <CHeader
+        x-if={title}
         title={title}
         text={text}
         link={link}
-        type="sub"
       />
-      <View className="ic-panel-content">
-        <ICHeader
-          x-if={title && insideTitle}
-          title={title}
-          text={text}
-          link={link}
-        />
+      <View className="c-panel-content">
         {children}
       </View>
     </View>
   );
 }
 
-export default ICPanel;
+export default CPanel;

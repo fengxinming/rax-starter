@@ -2,7 +2,7 @@ import { createElement, render } from 'rax';
 import DriverUniversal from 'driver-universal';
 import View from 'rax-view';
 
-export function createICComponent(
+export function createCComponent(
   Component,
   defaultClassName,
 ) {

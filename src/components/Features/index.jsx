@@ -6,7 +6,7 @@ import { history } from 'rax-app';
 
 import './index.scss';
 
-export default function ICFeatures({
+export default function CFeatures({
   className,
   features,
   labelKey = 'label',
@@ -15,15 +15,15 @@ export default function ICFeatures({
   ...rest
 }) {
   return (
-    <View x-class={['ic-features', className]} {...rest}>
+    <View x-class={['c-features', className]} {...rest}>
       <View
         x-for={(feature, index) in features}
         key={index}
-        className="ic-features-item"
+        className="c-features-item"
         onClick={() => feature.link && history.push(feature[linkKey])}
       >
-        <Image className="ic-features-item-icon" source={{ uri: feature[iconKey] }} />
-        <Text className="ic-features-item-label">
+        <Image className="c-features-item-icon" source={{ uri: feature[iconKey] }} />
+        <Text className="c-features-item-label">
           {feature[labelKey]}
         </Text>
       </View>

@@ -11,14 +11,14 @@ page {
   --button-normal-solid-font-color: #171A1D;
 }
 
-.ic-page {
+.c-page {
   background-color: #F7F7F7;
   min-height: 100%;
   padding: rpx375(16px) !important;
 }
 
-.ic-panel-layout {
-  .ic-panel {
+.c-panel-layout {
+  .c-panel {
     &:last-child {
       margin-bottom: 0 !important;
     }

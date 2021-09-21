@@ -9,7 +9,7 @@ import './index.scss';
 /**
  * 标题组件
  */
-export default function ICHeader({
+export default function CHeader({
   className,
   text, // 链接文字
   link,
@@ -23,15 +23,15 @@ export default function ICHeader({
   };
 
   return (
-    <View x-class={[className, 'ic-header', type === 'sub' && 'ic-header--sub']} {...rest}>
-      <Text className="ic-header-title">{title}</Text>
-      <View x-if={text || link} className="ic-header-link" onClick={link && forward}>
-        <Text x-if={text} className="ic-header-link-text">
+    <View x-class={[className, 'c-header', type === 'sub' && 'c-header--sub']} {...rest}>
+      <Text className="c-header-title">{title}</Text>
+      <View x-if={text || link} className="c-header-link" onClick={link && forward}>
+        <Text x-if={text} className="c-header-link-text">
           {text}
         </Text>
         <Icon
           x-if={link}
-          className="ic-header-link-arrow"
+          className="c-header-link-arrow"
           type="arrow-right"
           size="xs"
         />

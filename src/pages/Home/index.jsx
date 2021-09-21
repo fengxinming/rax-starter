@@ -1,14 +1,12 @@
 import { createElement } from 'rax';
-import { history } from 'rax-app';
 import View from 'rax-view';
 import Text from 'rax-text';
 import Image from 'rax-image';
 import Features from '@/components/Features';
-import Header from '@/components/Header';
-import useAction from '@/hooks/useAction';
-import { initialActions, initialState } from './scripts';
+import { BASIC_COMPONENTS } from './scripts';
 
 import styles from './index.module.scss';
+import CPanel from '@/components/Panel';
 
 function Card({
   icon,
@@ -30,42 +28,16 @@ function Card({
 }
 
 function CardPanel({
-  online,
-  total,
+  cards,
 }) {
-  const goDevices = () => {
-    history.push('/my-devices');
-  };
-
-  const goOnlineDevices = () => {
-    history.push('/my-devices?deviceStatus=ONLINE');
-  };
-
-  const preNotice = () => {
-    history.push('/');
-  };
-
   return (
     <View className={styles['card-row']}>
       <Card
-        label="总设备数"
-        value={total}
-        icon="https://img.alicdn.com/imgextra/i3/O1CN01txRtuX1xCSIU7085U_!!6000000006407-2-tps-100-100.png"
-        onClick={goDevices}
-      />
-
-      <Card
-        label="在线设备"
-        value={online}
-        icon="https://img.alicdn.com/imgextra/i4/O1CN01RjbOnM1ZGX2oqGdpM_!!6000000003167-2-tps-100-100.png"
-        onClick={goOnlineDevices}
-      />
-
-      <Card
-        label="待处理通知"
-        value={0}
-        icon="https://img.alicdn.com/imgextra/i1/O1CN01BIWl5X1TX7hLQCOon_!!6000000002391-2-tps-100-100.png"
-        onClick={preNotice}
+        x-for={(item, index) in cards}
+        key={index}
+        label={item.label}
+        value={item.value}
+        icon={item.icon}
       />
     </View>
   );
@@ -73,32 +45,28 @@ function CardPanel({
 
 
 function Home() {
-  const {
-    state: {
-      features,
-      online,
-      total,
-    },
-    useInit,
-  } = useAction(initialState, initialActions);
-
-  useInit();
-
   return (
-    <View className="ic-page">
+    <View className="c-page">
       <CardPanel
-        online={online}
-        total={total}
+        cards={[{
+          label: '基础组件',
+          value: BASIC_COMPONENTS.length,
+          icon: 'https://img.alicdn.com/imgextra/i3/O1CN01txRtuX1xCSIU7085U_!!6000000006407-2-tps-100-100.png',
+        }, {
+          label: '自定义组件',
+          value: 0,
+          icon: 'https://img.alicdn.com/imgextra/i4/O1CN01RjbOnM1ZGX2oqGdpM_!!6000000003167-2-tps-100-100.png',
+        }, {
+          label: '功能组件',
+          value: 0,
+          icon: 'https://img.alicdn.com/imgextra/i1/O1CN01BIWl5X1TX7hLQCOon_!!6000000002391-2-tps-100-100.png',
+        }]}
       />
 
-      <View className={styles['function-panel']}>
-        <Header
-          className={styles['function-panel-header']}
-          title="快速入口"
-          link="/home/all-services"
-          text="全部"
-        />
-        <Features className={styles['function-panel-features']} features={features} />
+      <View x-class={[styles['c-panel-layout'], styles['features-panel']]}>
+        <CPanel title="基础组件">
+          <Features features={BASIC_COMPONENTS} />
+        </CPanel>
       </View>
     </View>
   );

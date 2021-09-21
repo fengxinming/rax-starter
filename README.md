@@ -1,4 +1,4 @@
-# rax-materials-basic-app
+# rax-starter
 
 ## Getting Started
 
@@ -6,7 +6,7 @@
 
 Runs the app in development mode.
 
-Open [http://localhost:3333](http://localhost:3333) to view it in the browser.
+Open [http://localhost:3333](http://localhost:6666) to view it in the browser.
 
 The page will reload if you make edits.
 
