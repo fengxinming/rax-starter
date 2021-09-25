@@ -1,17 +1,28 @@
-const globals = [
-  './src/variables.scss',
-  './src/mixins.scss',
-  './src/functions.scss',
-];
+const { join } = require('path');
 
 module.exports = ({ onGetWebpackConfig }) => {
   onGetWebpackConfig((config) => {
-    ['scss', 'scss-module'].forEach((key) => {
+    ['styl', 'styl-module'].forEach((key) => {
       config.module.rule(key)
-        .use('sass-resources-loader')
-        .loader(require.resolve('sass-resources-loader'))
-        .options({
-          resources: globals,
+        .use('stylus-loader')
+        .tap((options) => {
+          let { stylusOptions } = options;
+          if (!stylusOptions) {
+            stylusOptions = {};
+            options.stylusOptions = stylusOptions;
+          }
+
+          let imports = stylusOptions.import;
+          if (!imports) {
+            imports = [];
+            stylusOptions.import = imports;
+          }
+          imports.push(
+            join(__dirname, 'src/styl/variables.styl'),
+            join(__dirname, 'src/styl/functions.styl'),
+            join(__dirname, 'src/styl/mixins.styl'),
+          );
+          return options;
         });
     });
   });

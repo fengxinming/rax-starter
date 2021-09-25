@@ -4,7 +4,7 @@ import Text from 'rax-text';
 import Image from 'rax-image';
 import { history } from 'rax-app';
 
-import './index.scss';
+import './index.styl';
 
 export default function CFeatures({
   className,

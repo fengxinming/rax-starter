@@ -1,11 +1,13 @@
-@use "sass:math";
-
 /**
  * px换算rpx (750/屏幕宽度)
  * 1px = 2rpx
- * 
+ *
  * 设计稿提供的屏幕设计宽度是375，因此乘以2
  */
-@function rpx375($px) {
-  @return if(unitless($px), $px, math.div($px, 1px)) * 2rpx;
-}
+rpx375($pxes)
+  $ret = ()
+
+  for $px in $pxes
+    append($ret, unit($px * 2, rpx))
+
+  return $ret

@@ -1,7 +1,7 @@
 import { createElement } from 'rax';
 import View from 'rax-view';
 import CHeader from '../Header';
-import './index.scss';
+import './index.styl';
 
 function CPanel({
   title,
@@ -22,6 +22,14 @@ function CPanel({
       <View className="c-panel-content">
         {children}
       </View>
+    </View>
+  );
+}
+
+export function CPanelLayout(props) {
+  return (
+    <View className="c-panel-layout">
+      {props.children}
     </View>
   );
 }

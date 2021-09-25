@@ -4,7 +4,7 @@ import View from 'rax-view';
 import Text from 'rax-text';
 import { Icon } from '@alifd/meet';
 
-import './index.scss';
+import './index.styl';
 
 /**
  * 标题组件

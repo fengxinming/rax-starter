@@ -1,11 +1,11 @@
 import { Tab } from '@alifd/meet';
-import { createICComponent } from '@/common/component-util';
+import { createCComponent } from '@/common/component-util';
 
 import './index.styl';
 
 const CTab = createCComponent(
   Tab,
-  'ic-tab-panel',
+  'c-tab',
 );
 
 export const CTabItem = Tab.Item;

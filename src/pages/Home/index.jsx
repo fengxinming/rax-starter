@@ -5,7 +5,7 @@ import Image from 'rax-image';
 import Features from '@/components/Features';
 import { BASIC_COMPONENTS } from './scripts';
 
-import styles from './index.module.scss';
+import styles from './index.module.styl';
 import CPanel from '@/components/Panel';
 
 function Card({
@@ -46,7 +46,7 @@ function CardPanel({
 
 function Home() {
   return (
-    <View className="c-page">
+    <View className={styles['page-home']}>
       <CardPanel
         cards={[{
           label: '基础组件',

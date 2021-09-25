@@ -12,10 +12,7 @@ export function createCComponent(
   }) {
     return (
       <View x-class={[defaultClassName, className]}>
-        <Component
-          className
-          {...rest}
-        />
+        <Component {...rest} />
       </View>
     );
   };

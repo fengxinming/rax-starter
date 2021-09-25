@@ -16,23 +16,19 @@
 // --tab-active-line-height    激活线高度    2rpx
 // --tab-normal-color    普通文本颜色    --box-normal-outline-font-color
 // --tab-active-color    选中文本颜色    --box-primary-text-font-color
+.c-tab
+  --tab-normal-color rgba(23, 26, 29, 0.6)
+  --tab-active-color #171A1D
+  --tab-medium-font-size rpx375(14px)
+  --tab-divider-height 0
+  --tab-medium-padding rpx375(15px 16px)
+  background-color $white-color
 
-.ic-tab-panel {
-  --tab-normal-color: rgba(23,26,29,0.6);
-  --tab-active-color: #171A1D;
-  --tab-medium-font-size: #{rpx375(14px)};
-  --tab-divider-height: 0;
-  --tab-medium-padding: #{rpx375(15px)} #{rpx375(16px)};
-
-  background-color: #FFFFFF;
-
-  .mt-tab-item-active-line {
-    border-radius: rpx375(1.5px);
-    background-color: #FF6A00;
-    height: rpx375(3px);
-    width: rpx375(20px);
-    left: 50%;
-    bottom: rpx375(4px);
-    margin-left: -10px;
-  }
-}
+  .mt-tab-item-active-line
+    border-radius rpx375(1.5px)
+    background-color $primary-color
+    height rpx375(3px)
+    width rpx375(20px)
+    left 50%
+    bottom rpx375(4px)
+    margin-left -10px

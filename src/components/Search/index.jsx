@@ -1,11 +1,11 @@
 import { Search } from '@alifd/meet';
-import { createICComponent } from '@/common/component-util';
+import { createCComponent } from '@/common/component-util';
 
-import './index.scss';
+import './index.styl';
 
 const CSearch = createCComponent(
   Search,
-  'c-search-panel',
+  'c-search',
 );
 
 export default CSearch;
